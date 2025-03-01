@@ -7,7 +7,7 @@ depends=(
 makedepends=("cmake" "extra-cmake-modules" "make" "gcc" "pkgconf")
 pkgdesc="LingmoUI is a GUI library based on QQC2 (Qt Quick Controls 2), every Lingmo application uses it."
 pkgrel=0
-pkgver=2.0.1
+pkgver=3.1.0
 url="https://lingmo.org"
 license=("GPL")
 source=("https://github.com/LingmoOS/${pkgname}/archive/refs/tags/${pkgver}.tar.gz")
@@ -15,6 +15,8 @@ sha256sums=('SKIP')
 
 prepare() {
     cd "$srcdir/${pkgname}-${pkgver}"
+    # Download QHotkey into thirdparty folder
+    thirdparty
 }
 
 build() {
@@ -28,4 +30,9 @@ package() {
     mkdir -pv "$pkgdir"
     cd "$srcdir/${pkgname}-${pkgver}/build"
     make DESTDIR="$pkgdir" install
+}
+
+# Function to download QHotkey into thirdparty folder
+thirdparty() {
+    git clone https://github.com/LingmoOS/QHotkey.git thirdparty/QHotkey
 }

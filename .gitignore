@@ -1,0 +1,5 @@
+*build
+*output
+*.zst
+*tar.gz
+*src

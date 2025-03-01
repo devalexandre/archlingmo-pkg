@@ -5,27 +5,32 @@ depends=('kwin' 'qt5-base' 'qt5-declarative' 'kconfig' 'kdecoration' 'kguiaddons
 makedepends=('cmake' 'extra-cmake-modules' 'git')
 pkgdesc="KWin plugin for LingmoOS"
 pkgrel=1
-pkgver=1.2.0
-_realver=1.2.0-1
-
+pkgver=1.2.3
 url="https://lingmo.org"
 license=("GPL")
-source=("https://github.com/LingmoOS/${pkgname}/archive/refs/tags/${_realver}.tar.gz")
+source=("https://github.com/LingmoOS/${pkgname}/archive/refs/tags/${pkgver}.tar.gz")
 sha256sums=('SKIP')
 
 prepare() {
-    cd "$srcdir/${pkgname}-${_realver}"
+    cd "$srcdir/${pkgname}-${pkgver}"
 }
 
 build() {
     echo "Compiling $pkgname"
-    mkdir -pv "$srcdir/${pkgname}-${_realver}/build" && cd "$srcdir/${pkgname}-${_realver}/build"
+    # Check if KDecoration2 is present
+    # if [ ! -f "/usr/lib/cmake/plasma5/KDecoration2/KDecoration2Config.cmake" ]; then
+    #     echo "Error: KDecoration2Config.cmake not found in /usr/lib/cmake/plasma5/KDecoration2/"
+    #     echo "Please install the kdecoration package"
+    #     exit 1
+    # fi
+    rm -rf "$srcdir/${pkgname}-${pkgver}/build"
+    mkdir -pv "$srcdir/${pkgname}-${pkgver}/build" && cd "$srcdir/${pkgname}-${pkgver}/build"
     cmake -DCMAKE_INSTALL_PREFIX=/usr ..
     make -j$(nproc) || return 1
 }
 
 package() {
     mkdir -pv "$pkgdir"
-    cd "$srcdir/${pkgname}-${_realver}/build"
+    cd "$srcdir/${pkgname}-${pkgver}/build"
     make DESTDIR="$pkgdir" install
 }
