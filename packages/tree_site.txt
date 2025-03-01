@@ -1,0 +1,110 @@
+.
+├── build-dev.sh
+├── build.sh
+├── liblingmo
+│   ├── 1.10.1.tar.gz
+│   ├── liblingmo-debug-1.10.1-0-x86_64.pkg.tar.zst
+│   └── PKGBUILD
+├── lingmo-calculator
+│   ├── 0.6.3.tar.gz
+│   ├── lingmo-calculator-debug-0.6.3-2-x86_64.pkg.tar.zst
+│   └── PKGBUILD
+├── lingmo-core
+│   ├── 2.0.2.tar.gz
+│   ├── lingmo-core-debug-2.0.2-1-x86_64.pkg.tar.zst
+│   └── PKGBUILD
+├── lingmo-cursor-themes
+│   ├── 2.0.2.tar.gz
+│   └── PKGBUILD
+├── lingmo-dock
+│   ├── 2.0.3.tar.gz
+│   ├── lingmo-dock-debug-2.0.3-0-x86_64.pkg.tar.zst
+│   └── PKGBUILD
+├── lingmo-filemanager
+│   ├── 0.8.1.tar.gz
+│   ├── lingmo-filemanager-debug-0.8.1-0-x86_64.pkg.tar.zst
+│   └── PKGBUILD
+├── lingmo-fontpkg
+│   └── PKGBUILD
+├── lingmo-gtk-themes
+│   ├── 2.0.2.tar.gz
+│   └── PKGBUILD
+├── lingmo-kwin-plugins
+│   ├── 1.2.3.tar.gz
+│   ├── lingmo-kwin-plugins-debug-1.2.3-1-x86_64.pkg.tar.zst
+│   └── PKGBUILD
+├── lingmo-launcher
+│   ├── 2.0.2.tar.gz
+│   ├── lingmo-launcher-debug-2.0.2-0-x86_64.pkg.tar.zst
+│   └── PKGBUILD
+├── lingmo-qt-plugins
+│   ├── 2.0.1.tar.gz
+│   ├── lingmo-qt-plugins-debug-2.0.1-0-x86_64.pkg.tar.zst
+│   └── PKGBUILD
+├── lingmo-screenlocker
+│   ├── 2.0.2.tar.gz
+│   ├── lingmo-screenlocker-debug-2.0.2-0-x86_64.pkg.tar.zst
+│   └── PKGBUILD
+├── lingmo-screenshots
+│   ├── 2.0.0.tar.gz
+│   ├── lingmo-screenshots-debug-2.0.0-0-x86_64.pkg.tar.zst
+│   └── PKGBUILD
+├── lingmo-sddm-theme
+│   ├── 2.7.0.tar.gz
+│   └── PKGBUILD
+├── lingmo-settings
+│   ├── 2.1.5+backport1.tar.gz
+│   ├── lingmo-settings-debug-2.1.5-1-x86_64.pkg.tar.zst
+│   └── PKGBUILD
+├── lingmo-statusbar
+│   ├── 2.0.1.tar.gz
+│   ├── lingmo-statusbar-debug-2.0.1-20-x86_64.pkg.tar.zst
+│   └── PKGBUILD
+├── lingmo-systemicons
+│   ├── 2.0.5.tar.gz
+│   └── PKGBUILD
+├── lingmo-terminal
+│   ├── 2.0.0.tar.gz
+│   ├── lingmo-terminal-debug-2.0.0-1-x86_64.pkg.tar.zst
+│   └── PKGBUILD
+├── lingmo-texteditor
+│   ├── 2.0.1.tar.gz
+│   ├── lingmo-texteditor-debug-2.0.1-1-x86_64.pkg.tar.zst
+│   └── PKGBUILD
+├── LingmoUI
+│   ├── 3.1.0.tar.gz
+│   ├── LingmoUI-debug-3.1.0-0-x86_64.pkg.tar.zst
+│   └── PKGBUILD
+├── lingmo-videoplayer
+│   ├── 2.0.1.tar.gz
+│   ├── lingmo-videoplayer-debug-2.0.1-1-x86_64.pkg.tar.zst
+│   └── PKGBUILD
+├── lingmo-wallpapers
+│   ├── 2.1.1.tar.gz
+│   └── PKGBUILD
+├── outputs
+│   ├── liblingmo-1.10.1-0-x86_64.pkg.tar.zst
+│   ├── lingmo-calculator-0.6.3-2-x86_64.pkg.tar.zst
+│   ├── lingmo-core-2.0.2-1-x86_64.pkg.tar.zst
+│   ├── lingmo-cursor-themes-2.0.2-2-x86_64.pkg.tar.zst
+│   ├── lingmo-dock-2.0.3-0-x86_64.pkg.tar.zst
+│   ├── lingmo-filemanager-0.8.1-0-x86_64.pkg.tar.zst
+│   ├── lingmo-gtk-themes-2.0.2-10-x86_64.pkg.tar.zst
+│   ├── lingmo-kwin-plugins-1.2.3-1-x86_64.pkg.tar.zst
+│   ├── lingmo-launcher-2.0.2-0-x86_64.pkg.tar.zst
+│   ├── lingmo-qt-plugins-2.0.1-0-x86_64.pkg.tar.zst
+│   ├── lingmo-screenlocker-2.0.2-0-x86_64.pkg.tar.zst
+│   ├── lingmo-screenshots-2.0.0-0-x86_64.pkg.tar.zst
+│   ├── lingmo-sddm-theme-2.7.0-0-x86_64.pkg.tar.zst
+│   ├── lingmo-settings-2.1.5-1-x86_64.pkg.tar.zst
+│   ├── lingmo-statusbar-2.0.1-20-x86_64.pkg.tar.zst
+│   ├── lingmo-systemicons-2.0.5-5-x86_64.pkg.tar.zst
+│   ├── lingmo-terminal-2.0.0-1-x86_64.pkg.tar.zst
+│   ├── lingmo-texteditor-2.0.1-1-x86_64.pkg.tar.zst
+│   ├── LingmoUI-3.1.0-0-x86_64.pkg.tar.zst
+│   ├── lingmo-videoplayer-2.0.1-1-x86_64.pkg.tar.zst
+│   └── lingmo-wallpapers-2.1.1-0-x86_64.pkg.tar.zst
+├── pkgs
+└── tree_site.txt
+
+24 directories, 84 files
