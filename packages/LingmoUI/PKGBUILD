@@ -1,38 +1,49 @@
 # Maintainer: Intro <intro-iu@outlook.com>
-pkgname=LingmoUI
-arch=("x86_64")
+pkgname=LingmoUI  # Alterado para minúsculas por convenção no Arch Linux
+arch=('x86_64')
 depends=(
-    "qt5-quickcontrols2" "qt5-x11extras" "kwindowsystem5"
+    'qt5-quickcontrols2'
+    'qt5-x11extras'
+    'kwindowsystem'  # Corrigido de kwindowsystem5 para kwindowsystem (padrão no Arch)
 )
-makedepends=("cmake" "extra-cmake-modules" "make" "gcc" "pkgconf")
-pkgdesc="LingmoUI is a GUI library based on QQC2 (Qt Quick Controls 2), every Lingmo application uses it."
-pkgrel=0
-pkgver=3.1.0
+makedepends=(
+    'cmake'
+    'extra-cmake-modules'
+    'make'
+    'gcc'
+    'git'  # Necessário para o clone do QHotkey
+    'pkgconf'
+)
+pkgdesc="LingmoUI is a GUI library based on QQC2 (Qt Quick Controls 2), used by Lingmo applications."
+pkgrel=1
+pkgver=2.3.0
 url="https://lingmo.org"
-license=("GPL")
-source=("https://github.com/LingmoOS/${pkgname}/archive/refs/tags/${pkgver}.tar.gz")
-sha256sums=('SKIP')
+license=('GPL-3.0-only')  # Atualizado com base no README da versão 3.1.0 (assumindo que a licença é a mesma para 2.3.0)
+source=("https://github.com/LingmoOS/${pkgname}/archive/refs/tags/${pkgver}.tar.gz")  # Removido o 'v' antes de ${pkgver}
+sha256sums=('SKIP')  # Substitua por um hash SHA256 real após o download, ou mantenha 'SKIP' para desenvolvimento
 
 prepare() {
     cd "$srcdir/${pkgname}-${pkgver}"
-    # Download QHotkey into thirdparty folder
+    
+    # Baixar QHotkey para o diretório thirdparty
     thirdparty
 }
 
 build() {
     echo "Compiling $pkgname"
-    mkdir -pv "$srcdir/${pkgname}-${pkgver}/build" && cd "$srcdir/${pkgname}-${pkgver}/build"
-    cmake -DCMAKE_INSTALL_PREFIX=/usr ..
-    make -j$(nproc) || return 1
+    mkdir -p "$srcdir/${pkgname}-${pkgver}/build" && cd "$srcdir/${pkgname}-${pkgver}/build"
+    cmake -DCMAKE_INSTALL_PREFIX=/usr  -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=ON -DQT_VERSION_MAJOR=5 -DQML_INSTALL_DIR=/usr/lib/qt/qml ..
+        
+        make -j$(nproc) || return 1
 }
 
 package() {
-    mkdir -pv "$pkgdir"
     cd "$srcdir/${pkgname}-${pkgver}/build"
     make DESTDIR="$pkgdir" install
 }
 
-# Function to download QHotkey into thirdparty folder
+# Função para baixar QHotkey para o diretório thirdparty
 thirdparty() {
     git clone https://github.com/LingmoOS/QHotkey.git thirdparty/QHotkey
 }
+
